@@ -1,0 +1,14 @@
+div {
+    position: fixed;
+    left: 0;
+    bottom: 0;
+    width: 100%;
+    color: white;
+    text-align: center;
+    z-index: 10;
+  }
+  p{
+    padding-top: 10px;
+    line-height: 10px;
+    font-weight: normal;
+  }

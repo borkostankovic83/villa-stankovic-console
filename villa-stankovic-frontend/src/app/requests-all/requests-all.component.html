@@ -1,0 +1,17 @@
+
+<table class="table table-striped"> 
+    <tr *ngFor="let response of response._embedded.request | paginate:{itemsPerPage: 6, currentPage:p}">    
+        <td class="d-inline-block col-3"><b>Name:</b> {{ response.name }} 
+        <br><b>Email:</b> {{ response.email }} 
+        <br><b>Phone:</b> {{ response.phone }}</td> 
+        <td class="d-inline-block col-6"><b>Question:</b> {{ response.question }}</td> 
+        <td class="d-inline-block col-1"><b>Date:</b> {{ response.time | date:'medium'}}</td> 
+        <td class="d-inline-block col-2"><Button class="btn btn-danger">Delete</Button><br>
+            <Button *ngIf="response.option == false" class="btn btn-success">Highlight</Button>
+            <Button *ngIf="response.option == true" class="btn btn-primary">Unhighlight</Button></td>
+    </tr> 
+</table> 
+
+<div id="pagination">
+    <pagination-controls (pageChange)="p=$event"></pagination-controls>
+</div>
